@@ -32,29 +32,30 @@ export default function Projects() {
   
               <div className="p-6">
                 <p className="text-sm text-brand-accent">
-                  Web Development
+                  Desktop Application Development
                 </p>
   
                 <h3 className="mt-2 text-2xl font-bold">
-                  Project Name
+                  Project Review and Analysis Management Information System
                 </h3>
   
                 <p className="mt-3 leading-7 text-text-light-muted">
-                  A short description of what the project does,
-                  what problem it solves, and what you built.
+                  Can insert, update, delete, and view project reviews and analysis. 
+                  It also has a search feature to find specific reviews and analysis. 
+                  The system is built using Python, PySide6, and MySQL.  
                 </p>
   
                 <div className="mt-5 flex flex-wrap gap-2">
                   <span className="rounded-full bg-brand-dark px-3 py-1 text-sm">
-                    Next.js
+                    Python
                   </span>
   
                   <span className="rounded-full bg-brand-dark px-3 py-1 text-sm">
-                    TypeScript
+                    FastAPI
                   </span>
   
                   <span className="rounded-full bg-brand-dark px-3 py-1 text-sm">
-                    Tailwind CSS
+                    PostgreSQL
                   </span>
                 </div>
   

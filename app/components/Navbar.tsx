@@ -17,6 +17,7 @@ export default function Navbar() {
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
+        <a href="/store">Store</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
@@ -44,6 +45,10 @@ export default function Navbar() {
 
             <a href="#experience" onClick={() => setIsOpen(false)}>
               Experience
+            </a>
+
+            <a href="/store" onClick={() => setIsOpen(false)}>
+              Store
             </a>
 
             <a href="#about" onClick={() => setIsOpen(false)}>
