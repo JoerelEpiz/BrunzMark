@@ -106,16 +106,8 @@
    --color-info-light: #d9e8eb;
  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--brand-light);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+ body {
+   background: var(--brand-light);
+   color: var(--brand-dark);
+ }
 

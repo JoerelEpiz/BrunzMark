@@ -51,11 +51,11 @@ export default function Projects() {
                   </span>
   
                   <span className="rounded-full bg-brand-dark px-3 py-1 text-sm">
-                    FastAPI
+                    PySide6
                   </span>
   
                   <span className="rounded-full bg-brand-dark px-3 py-1 text-sm">
-                    PostgreSQL
+                    MySQL
                   </span>
                 </div>
   

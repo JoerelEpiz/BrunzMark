@@ -6,9 +6,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex items-center justify-between px-8 py-4 bg-brand-dark text-brand-light fixed w-full z-10">
+    <nav className="flex items-center justify-between px-8 py-4 bg-brand-dark text-brand-light fixed top-0 w-full z-10">
       {/* Logo */}
-      <a href="#" className="text-xl font-bold">
+      <a href="/" className="text-xl font-bold">
         BRUNZMARK
       </a>
 

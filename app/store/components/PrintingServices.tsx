@@ -52,7 +52,7 @@ const services = [
             {services.map((service) => (
               <div
                 key={service.name}
-                className="group rounded-2xl border border-brand-light/10 bg-brand-light/[0.04] p-6 transition duration-300 hover:-translate-y-1 hover:border-brand-light/20 hover:bg-brand-light/[0.08] sm:p-8"
+                className="group rounded-2xl border border-brand-light/10 bg-brand-light/4 p-6 transition duration-300 hover:-translate-y-1 hover:border-brand-light/20 hover:bg-brand-light/8 sm:p-8"
               >
   
                 {/* Number */}
