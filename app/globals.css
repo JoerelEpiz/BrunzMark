@@ -12,6 +12,100 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@theme {
+   /* ========================================
+      BRAND COLORS
+      ======================================== */
+ 
+   --color-brand-dark: #224248;
+   --color-brand-light: #fdf0d5;
+ 
+   /* ========================================
+      DARK SCALE
+      ======================================== */
+ 
+   --color-dark-50: #eef5f5;
+   --color-dark-100: #dce9ea;
+   --color-dark-200: #b9d3d5;
+   --color-dark-300: #8fb7ba;
+   --color-dark-400: #63999d;
+   --color-dark-500: #4a7d82;
+   --color-dark-600: #38656a;
+   --color-dark-700: #2d555a;
+   --color-dark-800: #26484d;
+   --color-dark-900: #224248;
+   --color-dark-950: #172f33;
+ 
+   /* ========================================
+      CREAM / LIGHT SCALE
+      ======================================== */
+ 
+   --color-cream-50: #fffdf7;
+   --color-cream-100: #fff9ec;
+   --color-cream-200: #fdf0d5;
+   --color-cream-300: #f9e5bc;
+   --color-cream-400: #f4d69b;
+   --color-cream-500: #edc77b;
+   --color-cream-600: #dfae57;
+   --color-cream-700: #c9933f;
+   --color-cream-800: #a87538;
+   --color-cream-900: #875f31;
+   --color-cream-950: #493319;
+ 
+   /* ========================================
+      ACCENT
+      ======================================== */
+ 
+   --color-accent: #d49a4a;
+   --color-accent-hover: #bd8137;
+   --color-accent-light: #f2d39d;
+ 
+   /* ========================================
+      TEXT
+      ======================================== */
+ 
+   --color-text-primary: #224248;
+   --color-text-secondary: #527075;
+   --color-text-muted: #71898c;
+   --color-text-light: #fdf0d5;
+   --color-text-light-muted: #d9d0b9;
+ 
+   /* ========================================
+      BACKGROUNDS
+      ======================================== */
+ 
+   --color-bg-primary: #fdf0d5;
+   --color-bg-secondary: #f8e8c8;
+   --color-bg-dark: #224248;
+   --color-bg-dark-soft: #2d555a;
+   --color-bg-card: #fff9ec;
+ 
+   /* ========================================
+      BORDERS
+      ======================================== */
+ 
+   --color-border-light: #eadfca;
+   --color-border-medium: #cdbf9f;
+   --color-border-dark: #38656a;
+   --color-border-accent: #d49a4a;
+ 
+   /* ========================================
+      STATES
+      ======================================== */
+ 
+   --color-success: #4f8061;
+   --color-success-light: #dcebdd;
+ 
+   --color-warning: #c18a3a;
+   --color-warning-light: #f7e8c8;
+ 
+   --color-error: #a8544c;
+   --color-error-light: #f2d9d5;
+ 
+   --color-info: #477a87;
+   --color-info-light: #d9e8eb;
+ }
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -20,7 +114,8 @@
 }
 
 body {
-  background: var(--background);
+  background: var(--brand-light);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+

@@ -6,7 +6,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex items-center justify-between px-8 py-4">
+    <nav className="flex items-center justify-between px-8 py-4 bg-brand-dark text-brand-light fixed w-full z-10">
       {/* Logo */}
       <div className="text-xl font-bold">
         BRUNZMARK
@@ -31,7 +31,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-white px-8 py-6 shadow-md md:hidden">
+        <div className="absolute top-full left-0 w-full bg-brand-light px-8 py-6 shadow-md md:hidden text-brand-dark z-50">
           <div className="flex flex-col gap-6">
             <a href="#about" onClick={() => setIsOpen(false)}>
               About
