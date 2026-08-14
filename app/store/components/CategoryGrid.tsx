@@ -1,31 +1,37 @@
 const categories = [
     {
       name: "T-Shirts",
+      slug: "t-shirts",
       description: "Everyday essentials and custom tees.",
       image: "/categories/tshirts.jpg",
     },
     {
       name: "Hoodies",
+      slug: "hoodies",
       description: "Comfortable apparel for any style.",
       image: "/categories/hoodies.jpg",
     },
     {
       name: "Polos",
+      slug: "polos",
       description: "Clean and professional custom polos.",
       image: "/categories/polos.jpg",
     },
     {
       name: "Jerseys",
+      slug: "jerseys",
       description: "Custom jerseys for teams and events.",
       image: "/categories/jerseys.jpg",
     },
     {
       name: "Caps",
+      slug: "caps",
       description: "Custom caps for brands and organizations.",
       image: "/categories/caps.jpg",
     },
     {
       name: "Tote Bags",
+      slug: "tote-bags",
       description: "Reusable bags with your own design.",
       image: "/categories/totebags.jpg",
     },
@@ -67,7 +73,7 @@ const categories = [
             {categories.map((category) => (
               <a
                 key={category.name}
-                href="#"
+                href={`/store/category/${category.slug}`}
                 className="group overflow-hidden rounded-2xl border border-brand-dark/10 bg-white transition hover:-translate-y-1 hover:shadow-lg"
               >
   
