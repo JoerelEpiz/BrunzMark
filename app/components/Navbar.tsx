@@ -29,7 +29,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Button */}          
-          {/* <button
+          <button
             type="button"
             onClick={() => setIsOpen((current) => !current)}
             aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -37,17 +37,7 @@ export default function Navbar() {
             className="relative z-10000 flex h-10 w-10 items-center justify-center rounded-lg text-2xl md:hidden"
           >
             {isOpen ? "✕" : "☰"}
-          </button>  */}
-          <button
-            type="button"
-            onClick={() => {
-              alert("Hamburger clicked!");
-              setIsOpen((prev) => !prev);
-            }}
-            className="relative z-[99999] flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg bg-red-500 text-2xl md:hidden"
-          >
-            {isOpen ? "✕" : "☰"}
-          </button>
+          </button>  
           
         </div>
 

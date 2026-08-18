@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import {CartProvider} from "./store/context/CartContext";
+import { CartProvider } from "./store/context/CartContext";
+import type { ReactNode } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +20,11 @@ export const metadata: Metadata = {
     "Portfolio of Joerel Epiz — a web developer building modern, responsive, and user-focused websites and applications.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
     <html
       lang="en"

@@ -23,6 +23,7 @@ type CartContextType = {
   addToCart: (item: CartItem) => void;
   removeFromCart: (id: string) => void;
   updateQuantity: (id: string, quantity: number) => void;
+  clearCart: () => void;
   cartCount: number;
 };
 
@@ -36,23 +37,47 @@ export function CartProvider({
   children: ReactNode;
 }) {
   const [cart, setCart] = useState<CartItem[]>([]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  // Load cart from browser
+  // ==========================================
+  // LOAD CART FROM LOCAL STORAGE
+  // ==========================================
+
   useEffect(() => {
     const savedCart = localStorage.getItem("brunzmark-cart");
 
     if (savedCart) {
-      setCart(JSON.parse(savedCart));
+      try {
+        const parsedCart = JSON.parse(savedCart);
+
+        if (Array.isArray(parsedCart)) {
+          setCart(parsedCart);
+        }
+      } catch (error) {
+        console.error("Failed to load cart:", error);
+        localStorage.removeItem("brunzmark-cart");
+      }
     }
+
+    setIsLoaded(true);
   }, []);
 
-  // Save cart to browser
+  // ==========================================
+  // SAVE CART TO LOCAL STORAGE
+  // ==========================================
+
   useEffect(() => {
+    if (!isLoaded) return;
+
     localStorage.setItem(
       "brunzmark-cart",
       JSON.stringify(cart)
     );
-  }, [cart]);
+  }, [cart, isLoaded]);
+
+  // ==========================================
+  // ADD TO CART
+  // ==========================================
 
   function addToCart(item: CartItem) {
     setCart((currentCart) => {
@@ -76,11 +101,21 @@ export function CartProvider({
     });
   }
 
+  // ==========================================
+  // REMOVE ITEM
+  // ==========================================
+
   function removeFromCart(id: string) {
     setCart((currentCart) =>
-      currentCart.filter((item) => item.id !== id)
+      currentCart.filter(
+        (item) => item.id !== id
+      )
     );
   }
+
+  // ==========================================
+  // UPDATE QUANTITY
+  // ==========================================
 
   function updateQuantity(
     id: string,
@@ -98,10 +133,27 @@ export function CartProvider({
     );
   }
 
+  // ==========================================
+  // CLEAR CART
+  // ==========================================
+
+  function clearCart() {
+    setCart([]);
+  }
+
+  // ==========================================
+  // CART COUNT
+  // ==========================================
+
   const cartCount = cart.reduce(
-    (total, item) => total + item.quantity,
+    (total, item) =>
+      total + item.quantity,
     0
   );
+
+  // ==========================================
+  // PROVIDER
+  // ==========================================
 
   return (
     <CartContext.Provider
@@ -110,6 +162,7 @@ export function CartProvider({
         addToCart,
         removeFromCart,
         updateQuantity,
+        clearCart,
         cartCount,
       }}
     >
@@ -117,6 +170,10 @@ export function CartProvider({
     </CartContext.Provider>
   );
 }
+
+// ==========================================
+// USE CART
+// ==========================================
 
 export function useCart() {
   const context = useContext(CartContext);
